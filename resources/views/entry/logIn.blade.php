@@ -1,4 +1,4 @@
-@extends('master')
+@extends('pattern.master')
 @section("content")
 <div class="text-center mt-3">
     <h2 class="d-inline pr-5 mr-5">Welcome to the <a class="font-weight-bold" href="/">CartEye</a></h5>
