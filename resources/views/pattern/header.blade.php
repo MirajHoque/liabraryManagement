@@ -1,12 +1,3 @@
-<?php
-  use App\Http\Controllers\ProductController;
-  $total = 0;
-  if(Session::has('user')){
-    $total = ProductController::cartItem();
-  }
-  
-?>
-
 <style>
   .search-box{
     padding-left: 200px;
@@ -41,8 +32,6 @@
       
     </form>
 
-    <ul class="navbar-nav">
-      <li class=" mr-2 nav-item"><a href="/cartlist">cart({{ $total }})</a></li>
 
       <!-- log in dropdown--->
 

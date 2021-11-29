@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,11 @@ Route::get('/login', function () {
 });
 Route::view('register', 'entry.registration');
 Route::post('registration', [UserController::class, 'registration']);
+Route::post('/login', [UserController::class, 'logIn']);
+Route::get('/admindashboard', [AdminController::class, 'index']);
+Route::get('/logout', function () {
+    Session::forget('user');
+    return redirect('/login');
+    
+});
 

@@ -22,6 +22,16 @@ class UserController extends Controller
         $user->save();
 
         return redirect('login');
+    }
 
+    function logIn(Request $req){
+        $user = User::where(['email'=>$req->email])->first();
+        if(!$user || !$req->password = $user->password){
+            return "User Name or Password is not matched";
+        }
+        else{
+            $req->session()->put('user',$user);
+            return redirect('/admindashboard');
+        }
     }
 }
