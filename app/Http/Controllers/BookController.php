@@ -93,6 +93,15 @@ class BookController extends Controller
         return redirect('admindashboard');
     }
 
+    function search(){
+        $search_text = $_GET['search'];
+        $books = Issue::where('issueto', '=', $search_text)->get();        
+        
+        //$books = Book::where('issueto', '=', $search_text)->get();
+
+        return view('book.search', compact('books'));
+    }
+
     
 }
 

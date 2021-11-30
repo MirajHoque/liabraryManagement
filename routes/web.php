@@ -55,3 +55,6 @@ Route::get('issuebook',[BookController::class, 'issueBook']);
 Route::get('issuedbook', [BookController::class, 'issuedBook']);
 Route::post('issued', [BookController::class, 'bookIssued']);
 Route::get('/book/returned/{name}', [BookController::class, 'updateStatus']);
+
+//search
+Route::get('search', [BookController::class, 'search']);
